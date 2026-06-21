@@ -1,24 +1,24 @@
 export const students = [
-{ id: 1, nim: "2021001", name: "Andi Pratama", semester: 5, ipk: 3.71, sks: 120, attendance: 96, riskLevel: "rendah", lastUpdate: "2026-06-01" },
-{ id: 2, nim: "2021002", name: "Siti Aisyah", semester: 5, ipk: 3.52, sks: 118, attendance: 93, riskLevel: "rendah", lastUpdate: "2026-06-02" },
-{ id: 3, nim: "2021003", name: "Budi Santoso", semester: 4, ipk: 2.91, sks: 94, attendance: 86, riskLevel: "sedang", lastUpdate: "2026-06-02" },
-{ id: 4, nim: "2021004", name: "Dewi Lestari", semester: 6, ipk: 3.84, sks: 138, attendance: 98, riskLevel: "rendah", lastUpdate: "2026-06-03" },
-{ id: 5, nim: "2021005", name: "Fajar Hidayat", semester: 3, ipk: 2.48, sks: 72, attendance: 79, riskLevel: "tinggi", lastUpdate: "2026-06-03" },
-{ id: 6, nim: "2021006", name: "Nadia Putri", semester: 5, ipk: 3.15, sks: 110, attendance: 91, riskLevel: "sedang", lastUpdate: "2026-06-04" },
-{ id: 7, nim: "2021007", name: "Rizky Maulana", semester: 6, ipk: 2.67, sks: 99, attendance: 83, riskLevel: "sedang", lastUpdate: "2026-06-04" },
-{ id: 8, nim: "2021008", name: "Lina Marlina", semester: 4, ipk: 3.67, sks: 101, attendance: 95, riskLevel: "rendah", lastUpdate: "2026-06-04" },
-{ id: 9, nim: "2021009", name: "Agus Saputra", semester: 2, ipk: 2.22, sks: 40, attendance: 74, riskLevel: "tinggi", lastUpdate: "2026-06-05" },
-{ id: 10, nim: "2021010", name: "Maya Sari", semester: 7, ipk: 3.41, sks: 142, attendance: 97, riskLevel: "rendah", lastUpdate: "2026-06-05" },
-{ id: 11, nim: "2021011", name: "Dimas Akbar", semester: 6, ipk: 2.95, sks: 112, attendance: 88, riskLevel: "sedang", lastUpdate: "2026-06-06" },
-{ id: 12, nim: "2021012", name: "Kania Dewi", semester: 3, ipk: 3.28, sks: 78, attendance: 92, riskLevel: "rendah", lastUpdate: "2026-06-06" },
-{ id: 13, nim: "2021013", name: "Tegar Nugroho", semester: 4, ipk: 2.56, sks: 88, attendance: 80, riskLevel: "tinggi", lastUpdate: "2026-06-07" },
-{ id: 14, nim: "2021014", name: "Rani Permata", semester: 5, ipk: 3.76, sks: 123, attendance: 99, riskLevel: "rendah", lastUpdate: "2026-06-07" },
-{ id: 15, nim: "2021015", name: "Yoga Pradana", semester: 8, ipk: 3.09, sks: 150, attendance: 90, riskLevel: "sedang", lastUpdate: "2026-06-08" },
-{ id: 16, nim: "2021016", name: "Intan Puspita", semester: 2, ipk: 3.49, sks: 36, attendance: 94, riskLevel: "rendah", lastUpdate: "2026-06-08" },
-{ id: 17, nim: "2021017", name: "Wahyu Setiawan", semester: 7, ipk: 2.74, sks: 130, attendance: 84, riskLevel: "sedang", lastUpdate: "2026-06-09" },
-{ id: 18, nim: "2021018", name: "Putri Handayani", semester: 6, ipk: 3.88, sks: 144, attendance: 98, riskLevel: "rendah", lastUpdate: "2026-06-09" },
-{ id: 19, nim: "2021019", name: "Arif Rahman", semester: 3, ipk: 2.41, sks: 66, attendance: 77, riskLevel: "tinggi", lastUpdate: "2026-06-10" },
-{ id: 20, nim: "2021020", name: "Salsa Amelia", semester: 5, ipk: 3.22, sks: 109, attendance: 89, riskLevel: "sedang", lastUpdate: "2026-06-10" },
+{ id: 1, nim: "2021001", name: "Andi Pratama", year: 3, curricular1stSemGrade: 13.74, curricular2ndSemGrade: 13.68, sks: 100, attendance: 96, riskLevel: "rendah", displaced: 0, tuitionFeesUpToDate: 1, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 18, lastUpdate: "2026-06-01" },
+{ id: 2, nim: "2021002", name: "Siti Aisyah", year: 3, curricular1stSemGrade: 14.54, curricular2ndSemGrade: 14.00, sks: 108, attendance: 93, riskLevel: "rendah", displaced: 1, tuitionFeesUpToDate: 0, gender: 0, scholarshipHolder: 0, ageAtEnrollment: 19, lastUpdate: "2026-06-02" },
+{ id: 3, nim: "2021003", name: "Budi Santoso", year: 2, curricular1stSemGrade: 12.88, curricular2ndSemGrade: 12.94, sks: 94, attendance: 86, riskLevel: "sedang", displaced: 1, tuitionFeesUpToDate: 1, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 20, lastUpdate: "2026-06-02" },
+{ id: 4, nim: "2021004", name: "Dewi Lestari", year: 3, curricular1stSemGrade: 13.82, curricular2ndSemGrade: 13.86, sks: 108, attendance: 98, riskLevel: "rendah", displaced: 1, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 0, ageAtEnrollment: 18, lastUpdate: "2026-06-03" },
+{ id: 5, nim: "2021005", name: "Fajar Hidayat", year: 2, curricular1stSemGrade: 8.41, curricular2ndSemGrade: 7.96, sks: 72, attendance: 79, riskLevel: "tinggi", displaced: 1, tuitionFeesUpToDate: 0, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 19, lastUpdate: "2026-06-03" },
+{ id: 6, nim: "2021006", name: "Nadia Putri", year: 3, curricular1stSemGrade: 17.18, curricular2ndSemGrade: 18.12, sks: 110, attendance: 91, riskLevel: "rendah", displaced: 0, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 0, ageAtEnrollment: 18, lastUpdate: "2026-06-04" },
+{ id: 7, nim: "2021007", name: "Rizky Maulana", year: 3, curricular1stSemGrade: 11.65, curricular2ndSemGrade: 11.69, sks: 99, attendance: 83, riskLevel: "sedang", displaced: 1, tuitionFeesUpToDate: 1, gender: 1, scholarshipHolder: 1, ageAtEnrollment: 20, lastUpdate: "2026-06-04" },
+{ id: 8, nim: "2021008", name: "Lina Marlina", year: 2, curricular1stSemGrade: 13.70, curricular2ndSemGrade: 13.64, sks: 101, attendance: 95, riskLevel: "rendah", displaced: 1, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 1, ageAtEnrollment: 21, lastUpdate: "2026-06-04" },
+{ id: 9, nim: "2021009", name: "Agus Saputra", year: 1, curricular1stSemGrade: 7.38, curricular2ndSemGrade: 6.92, sks: 40, attendance: 74, riskLevel: "tinggi", displaced: 1, tuitionFeesUpToDate: 0, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 18, lastUpdate: "2026-06-05" },
+{ id: 10, nim: "2021010", name: "Maya Sari", year: 4, curricular1stSemGrade: 13.43, curricular2ndSemGrade: 13.39, sks: 102, attendance: 97, riskLevel: "rendah", displaced: 1, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 0, ageAtEnrollment: 20, lastUpdate: "2026-06-05" },
+{ id: 11, nim: "2021011", name: "Dimas Akbar", year: 3, curricular1stSemGrade: 12.92, curricular2ndSemGrade: 12.98, sks: 102, attendance: 88, riskLevel: "sedang", displaced: 1, tuitionFeesUpToDate: 1, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 18, lastUpdate: "2026-06-06" },
+{ id: 12, nim: "2021012", name: "Kania Dewi", year: 2, curricular1stSemGrade: 13.30, curricular2ndSemGrade: 13.26, sks: 78, attendance: 92, riskLevel: "rendah", displaced: 0, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 0, ageAtEnrollment: 19, lastUpdate: "2026-06-06" },
+{ id: 13, nim: "2021013", name: "Tegar Nugroho", year: 2, curricular1stSemGrade: 10.2, curricular2ndSemGrade: 5.20, sks: 88, attendance: 80, riskLevel: "tinggi", displaced: 1, tuitionFeesUpToDate: 1, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 20, lastUpdate: "2026-06-07" },
+{ id: 14, nim: "2021014", name: "Rani Permata", year: 3, curricular1stSemGrade: 13.78, curricular2ndSemGrade: 13.74, sks: 103, attendance: 99, riskLevel: "rendah", displaced: 1, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 1, ageAtEnrollment: 18, lastUpdate: "2026-06-07" },
+{ id: 15, nim: "2021015", name: "Yoga Pradana", year: 4, curricular1stSemGrade: 13.07, curricular2ndSemGrade: 13.11, sks: 100, attendance: 90, riskLevel: "sedang", displaced: 1, tuitionFeesUpToDate: 1, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 21, lastUpdate: "2026-06-08" },
+{ id: 16, nim: "2021016", name: "Intan Puspita", year: 1, curricular1stSemGrade: 13.45, curricular2ndSemGrade: 13.53, sks: 36, attendance: 94, riskLevel: "rendah", displaced: 0, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 0, ageAtEnrollment: 18, lastUpdate: "2026-06-08" },
+{ id: 17, nim: "2021017", name: "Wahyu Setiawan", year: 4, curricular1stSemGrade: 17.76, curricular2ndSemGrade: 18.72, sks: 110, attendance: 84, riskLevel: "rendah", displaced: 1, tuitionFeesUpToDate: 1, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 22, lastUpdate: "2026-06-09" },
+{ id: 18, nim: "2021018", name: "Putri Handayani", year: 3, curricular1stSemGrade: 13.86, curricular2ndSemGrade: 13.90, sks: 104, attendance: 98, riskLevel: "rendah", displaced: 1, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 1, ageAtEnrollment: 19, lastUpdate: "2026-06-09" },
+{ id: 19, nim: "2021019", name: "Arif Rahman", year: 2, curricular1stSemGrade: 8.15, curricular2ndSemGrade: 7.89, sks: 66, attendance: 77, riskLevel: "tinggi", displaced: 1, tuitionFeesUpToDate: 0, gender: 1, scholarshipHolder: 0, ageAtEnrollment: 20, lastUpdate: "2026-06-10" },
+{ id: 20, nim: "2021020", name: "Salsa Amelia", year: 3, curricular1stSemGrade: 13.24, curricular2ndSemGrade: 13.20, sks: 109, attendance: 89, riskLevel: "sedang", displaced: 0, tuitionFeesUpToDate: 1, gender: 0, scholarshipHolder: 0, ageAtEnrollment: 20, lastUpdate: "2026-06-10" },
 ];
 export const dosenWali = [
   { id: 1, nip: "198501012010121001", name: "Dr. Ahmad Fauzi, M.Kom", email: "ahmad.fauzi@univ.ac.id" },
@@ -47,14 +47,14 @@ export const ipkTrends = [
 { semester: "8", average: 3.33 },
 ];
 export const modelMetrics = [
-{ model: "Random Forest", accuracy: 0.91, precision: 0.89, recall: 0.9, f1: 0.89 },
-{ model: "SVM", accuracy: 0.87, precision: 0.85, recall: 0.84, f1: 0.84 },
-{ model: "Neural Network", accuracy: 0.93, precision: 0.92, recall: 0.91, f1: 0.91 },
+{ model: "Random Forest", accuracy: 0.84, precision: 0.83, recall: 0.84, f1: 0.83 },
+{ model: "SVM", accuracy: 0.86, precision: 0.86, recall: 0.86, f1: 0.86 },
+{ model: "Neural Network", accuracy: 0.86, precision: 0.85, recall: 0.86, f1: 0.85 },
 ];
 export const confusionMatrices = {
-"Random Forest": [[58, 4, 1], [3, 44, 5], [0, 6, 39]],
-SVM: [[55, 6, 2], [4, 41, 7], [1, 8, 36]],
-"Neural Network": [[60, 2, 1], [2, 46, 4], [0, 4, 41]],
+"Random Forest": [[544, 57], [88, 196]],
+SVM: [[558, 43], [81, 203]],
+"Neural Network": [[568, 33], [95, 189]],
 };
 export const featureImportance = [
 { feature: "IPK", importance: 0.31 },
@@ -63,3 +63,10 @@ export const featureImportance = [
 { feature: "Nilai Tugas", importance: 0.15 },
 { feature: "Kehadiran UTS/UAS", importance: 0.13 },
 ];
+
+export const calculateRiskLevel = (grade1, grade2) => {
+  const avg = (grade1 + grade2) / 2;
+  if (avg < 2) return "tinggi";
+  if (avg < 2.6) return "sedang";
+  return "rendah";
+};

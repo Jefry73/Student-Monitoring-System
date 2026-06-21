@@ -1,6 +1,6 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## before npm start, do npm install; and also use VENV with requirements.txt
+### `npm install`
 
 ## Available Scripts
 

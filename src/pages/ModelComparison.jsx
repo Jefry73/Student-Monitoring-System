@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Form, Card } from "react-bootstrap";
 import Navbar from "../components/Navbar";
@@ -12,7 +12,6 @@ import { getUserSession } from "../utils/auth";
 const ModelComparison = () => {
   const navigate = useNavigate();
   const user = getUserSession();
-  const [selectedModel, setSelectedModel] = useState("Random Forest");
 
   useEffect(() => {
     // Proteksi: hanya admin yang bisa akses
@@ -21,8 +20,7 @@ const ModelComparison = () => {
     }
   }, [user, navigate]);
 
-  const currentMatrix = confusionMatrices[selectedModel];
-  const labels = ["Rendah", "Sedang", "Tinggi"];
+  const labels = ["Graduate", "Dropout"];
 
   return (
     <div className="app-container">
@@ -35,21 +33,13 @@ const ModelComparison = () => {
               <h3 className="mb-1">Model Comparison</h3>
               <p className="text-muted mb-0">Bandingkan performa model Machine Learning untuk prediksi risiko akademik</p>
             </div>
-            <Form.Select 
-              style={{ width: 'auto' }}
-              value={selectedModel}
-              onChange={(e) => setSelectedModel(e.target.value)}
-            >
-              <option value="Random Forest">Random Forest</option>
-              <option value="SVM">Support Vector Machine</option>
-              <option value="Neural Network">Neural Network</option>
-            </Form.Select>
+            <div className="text-muted">Semua model dibandingkan dan diinterpretasikan di bawah.</div>
           </div>
 
           <Row className="g-4 mb-4">
             {modelMetrics.map((model) => (
               <Col md={4} key={model.model}>
-                <Card className={`stat-card ${selectedModel === model.model ? 'border-primary' : ''}`}>
+                <Card className={`'border-primary' : ''}`}>
                   <Card.Body>
                     <h6 className="text-muted mb-3">{model.model}</h6>
                     <Row className="g-3">
@@ -78,27 +68,50 @@ const ModelComparison = () => {
 
           <Row className="g-4">
             <Col lg={6}>
-              <ChartCard title={`Confusion Matrix - ${selectedModel}`}>
-                <ConfusionMatrix matrix={currentMatrix} labels={labels} />
+              <ChartCard title="Confusion Matrices">
+                <div className="row g-4">
+                  {Object.entries(confusionMatrices).map(([modelName, matrix]) => (
+                    <div className="col-12" key={modelName}>
+                      <Card className="chart-card mb-3">
+                        <Card.Header className="bg-white border-0 pb-0">
+                          <h5 className="mb-0">{modelName}</h5>
+                        </Card.Header>
+                        <Card.Body>
+                          <ConfusionMatrix matrix={matrix} labels={labels} />
+                        </Card.Body>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
               </ChartCard>
             </Col>
             <Col lg={6}>
-              <FeatureImportance featureImportance={featureImportance} />
-            </Col>
-          </Row>
-
-          <Row className="mt-4">
-            <Col>
               <ChartCard title="Interpretasi Model">
                 <div className="p-3">
-                  <h6>Model Terpilih: {selectedModel}</h6>
-                  <p className="text-muted mb-3">
-                    {selectedModel === "Random Forest" && "Random Forest menunjukkan performa terbaik dengan accuracy 91% dan keseimbangan yang baik antara precision dan recall."}
-                    {selectedModel === "SVM" && "Support Vector Machine memberikan hasil yang stabil dengan accuracy 87%, cocok untuk dataset dengan dimensi tinggi."}
-                    {selectedModel === "Neural Network" && "Neural Network mencapai accuracy tertinggi 93%, sangat efektif untuk pattern recognition kompleks."}
-                  </p>
-                  
+                  <div className="mb-4">
+                    <h6>Random Forest</h6>
+                    <p className="text-muted">
+                      Random Forest memberikan accuracy 84% pada test set dengan 544 graduate dan 196 dropout yang terdeteksi benar, tetapi menghasilkan lebih banyak false negative dibanding SVM.
+                    </p>
+                  </div>
+                  <div className="mb-4">
+                    <h6>Support Vector Machine</h6>
+                    <p className="text-muted">
+                      Support Vector Machine mencapai accuracy 86% pada test set dengan performa paling seimbang dan 203 dropout yang terdeteksi benar.
+                    </p>
+                  </div>
+                  <div>
+                    <h6>Neural Network</h6>
+                    <p className="text-muted">
+                      Neural Network juga mencapai accuracy 86% pada test set, dengan 568 graduate dan 189 dropout yang terdeteksi benar, menunjukkan kekuatan dalam pola non-linier.
+                    </p>
+                  </div>
+                </div>
+                <div className="p-3">
                   <h6>Rekomendasi</h6>
+                  <p className="text-muted mb-3">
+                    Semua model menunjukkan performa yang baik, tetapi SVM dan Neural Network memberikan deteksi dropout yang lebih seimbang pada test set. Random Forest tetap berguna sebagai baseline stabil.
+                  </p>
                   <ul className="text-muted">
                     <li>Gunakan model dengan F1-Score tertinggi untuk prediksi risiko akademik</li>
                     <li>Monitor false negative untuk menghindari mahasiswa berisiko yang terlewat</li>

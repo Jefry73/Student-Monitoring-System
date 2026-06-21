@@ -9,6 +9,6 @@ const data = {
 labels: ["Rendah", "Sedang", "Tinggi"],
 datasets: [{ data: [counts.rendah, counts.sedang, counts.tinggi], backgroundColor: ["#198754", "#ffc107", "#dc3545"] }],
 };
-return <ChartCard title="Distribusi Risiko"><Pie data={data} /></ChartCard>;
+return <ChartCard title="Distribusi Risiko"><br></br><Pie data={data} /></ChartCard>;
 };
 export default RiskDistributionChart;

@@ -1,0 +1,29 @@
+{
+  "feature_columns": [
+    "Displaced",
+    "Tuition fees up to date",
+    "Gender",
+    "Scholarship holder",
+    "Age at enrollment",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 2nd sem (grade)"
+  ],
+  "label_map": {
+    "graduate": 0,
+    "dropout": 1
+  },
+  "risk_thresholds": [
+    [
+      0.7,
+      "High Risk"
+    ],
+    [
+      0.4,
+      "Medium Risk"
+    ],
+    [
+      0.0,
+      "Low Risk"
+    ]
+  ]
+}
