@@ -49,7 +49,7 @@ const StudentDetail = () => {
 
     // Load predictions
     loadPredictions(studentData);
-  }, [id, user, navigate]);
+  }, [id, user?.id, user?.role, navigate]);
 
   const loadPredictions = async (studentData) => {
     setLoadingPredictions(true);

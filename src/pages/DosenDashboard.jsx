@@ -21,10 +21,9 @@ const DosenDashboard = () => {
       return;
     }
 
-    // Ambil mahasiswa bimbingan berdasarkan ID dosen
     const mahasiswa = getMahasiswaByDosen(user.id);
     setMahasiswaBimbingan(mahasiswa);
-  }, [user, navigate]);
+  }, [user?.id, user?.role, navigate]);
 
   const total = mahasiswaBimbingan.length;
   const atRisk = mahasiswaBimbingan.filter(s => s.riskLevel === 'tinggi').length;
