@@ -62,21 +62,21 @@ const DosenDashboard = () => {
               <StatCard 
                 title="Total Mahasiswa Bimbingan" 
                 value={total} 
-                trend={0} 
+                subtitle="Mahasiswa aktif"
               />
             </Col>
             <Col md={4}>
               <StatCard 
                 title="Perlu Perhatian (Sedang)" 
                 value={needAttention} 
-                trend={0} 
+                subtitle={`${total > 0 ? Math.round((needAttention/total)*100) : 0}% dari total bimbingan`}
               />
             </Col>
             <Col md={4}>
               <StatCard 
                 title="Berisiko Tinggi" 
                 value={atRisk} 
-                trend={0} 
+                subtitle={`${total > 0 ? Math.round((atRisk/total)*100) : 0}% dari total bimbingan`}
               />
             </Col>
           </Row>
