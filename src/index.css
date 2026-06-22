@@ -11,11 +11,11 @@ font-family: "Inter", sans-serif;
 background: var(--light);
 color: var(--dark);
 }
-.app-container { min-height: 100vh; display: flex; }
-.sidebar { width: 280px; background: #1f2937; transition: all 0.3s ease; }
+.app-container { min-height: 100vh; display: flex; width: 100%; }
+.sidebar { width: 280px; flex-shrink: 0; background: #1f2937; transition: all 0.3s ease; }
 .sidebar.collapsed { width: 80px; }
 .navbar-custom { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
-.content-wrapper { flex: 1; padding: 24px; }
+.content-wrapper { flex: 1; padding: 24px; min-width: 0; }
 .stat-card, .student-card, .chart-card { border: none; border-radius: 14px; box-shadow: 0 8px 24px rgba(15,23,42,0.08); }
 .stat-card:hover, .student-card:hover, .chart-card:hover { transform: translateY(-2px); transition: 0.2s ease; }
 .badge-success { background: #d1e7dd; color: #0f5132; }

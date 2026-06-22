@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ONNX Model Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/ort.min.js"></script>
+</head>
+<body>
+    <h1>ONNX Model Test</h1>
+    <div id="output"></div>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        async function testONNX() {
+            try {
+                output.innerHTML += '<p>Setting WASM paths...</p>';
+                ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/';
+                
+                const models = ['mlp', 'random_forest', 'svm'];
+                
+                for (const modelName of models) {
+                    output.innerHTML += `<h2>Testing ${modelName}</h2>`;
+                    
+                    try {
+                        const modelPath = `/models/${modelName}.onnx`;
+                        output.innerHTML += `<p>Loading from: ${modelPath}</p>`;
+                        
+                        const session = await ort.InferenceSession.create(modelPath, {
+                            executionProviders: ['wasm'],
+                        });
+                        
+                        output.innerHTML += `<p>✓ Session created successfully</p>`;
+                        output.innerHTML += `<p>Input names: ${session.inputNames.join(', ')}</p>`;
+                        output.innerHTML += `<p>Output names: ${session.outputNames.join(', ')}</p>`;
+                        
+                        // Test inference
+                        const testData = new Float32Array([1, 1, 1, 0, 20, 13.74, 13.68]);
+                        const inputTensor = new ort.Tensor('float32', testData, [1, 7]);
+                        const result = await session.run({ input: inputTensor });
+                        
+                        output.innerHTML += `<p>✓ Inference successful</p>`;
+                        output.innerHTML += `<p>Output keys: ${Object.keys(result).join(', ')}</p>`;
+                        
+                        for (const [key, outputValue] of Object.entries(result)) {
+                            output.innerHTML += `<p><strong>${key}</strong>: type=${outputValue.type}, dims=${JSON.stringify(outputValue.dims)}</p>`;
+                            
+                            // Try different ways to access the data
+                            try {
+                                if (outputValue.data) {
+                                    output.innerHTML += `<p>Data (via .data): ${Array.from(outputValue.data.slice(0, 10))}</p>`;
+                                } else {
+                                    output.innerHTML += `<p>No .data property. Output object keys: ${Object.keys(outputValue)}</p>`;
+                                    output.innerHTML += `<p>Output: ${JSON.stringify(outputValue, null, 2)}</p>`;
+                                }
+                            } catch (e) {
+                                output.innerHTML += `<p style="color: orange;">Can't access data: ${e.message}</p>`;
+                                output.innerHTML += `<p>Output object keys: ${Object.keys(outputValue)}</p>`;
+                            }
+                        }
+                        
+                    } catch (e) {
+                        output.innerHTML += `<p style="color: red;">✗ Error: ${e.message}</p>`;
+                    }
+                }
+                
+            } catch (e) {
+                output.innerHTML += `<p style="color: red;">Fatal error: ${e.message}</p>`;
+                console.error(e);
+            }
+        }
+        
+        testONNX();
+    </script>
+</body>
+</html>

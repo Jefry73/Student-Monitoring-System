@@ -22,4 +22,3 @@ const map = { rendah: "Aman", sedang: "Perlu Perhatian", tinggi: "Berisiko" };
 return map[risk] || "Tidak Diketahui";
 };
 export const sortByName = (items) => [...items].sort((a, b) => a.name.localeCompare(b.name));
-export const sortByIPK = (items) => [...items].sort((a, b) => b.ipk - a.ipk);

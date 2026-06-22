@@ -8,6 +8,6 @@ labels: ipkTrends.map((item) => item.semester),
 datasets: [{ label: "Rata-rata IPK", data: ipkTrends.map((item) => item.average), borderColor: "#0d6efd", backgroundColor: "rgba(13,110,253,0.15)", tension: 0.35, fill: true }],
 };
 const options = { responsive: true, plugins: { legend: { display: false } }, scales: { y: { min: 0, max: 4 } } };
-return <ChartCard title="Tren IPK per Semester"><Line data={data} options={options} /></ChartCard>;
+return <ChartCard title="Tren IPK per Semester"><br></br><Line data={data} options={options} /></ChartCard>;
 };
 export default IPKTrendChart;

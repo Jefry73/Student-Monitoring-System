@@ -11,7 +11,7 @@ import { getUserSession } from "../utils/auth";
 const DataAkademik = () => {
   const navigate = useNavigate();
   const user = getUserSession();
-  const [semester, setSemester] = useState("all");
+  const [year, setYear] = useState("all");
 
   useEffect(() => {
     // Proteksi: hanya admin yang bisa akses
@@ -21,13 +21,13 @@ const DataAkademik = () => {
   }, [user, navigate]);
 
   const records = [
-    { nim: "2021001", semester: 5, matkul: "Pemrograman Web", nilai: "A", sks: 3 },
-    { nim: "2021002", semester: 5, matkul: "Basis Data", nilai: "A-", sks: 3 },
-    { nim: "2021003", semester: 4, matkul: "Struktur Data", nilai: "B+", sks: 4 },
-    { nim: "2021004", semester: 6, matkul: "Artificial Intelligence", nilai: "A", sks: 3 },
-    { nim: "2021005", semester: 3, matkul: "Algoritma", nilai: "C+", sks: 4 },
-    { nim: "2021006", semester: 5, matkul: "Jaringan Komputer", nilai: "B", sks: 3 },
-  ].filter((item) => semester === "all" || String(item.semester) === semester);
+    { nim: "2021001", year: 3, semesterPeriod: "Semester Ganjil", matkul: "Pemrograman Web", nilai: "A", sks: 3 },
+    { nim: "2021002", year: 3, semesterPeriod: "Semester Ganjil", matkul: "Basis Data", nilai: "A-", sks: 3 },
+    { nim: "2021003", year: 2, semesterPeriod: "Semester Genap", matkul: "Struktur Data", nilai: "B+", sks: 4 },
+    { nim: "2021004", year: 3, semesterPeriod: "Semester Genap", matkul: "Artificial Intelligence", nilai: "A", sks: 3 },
+    { nim: "2021005", year: 2, semesterPeriod: "Semester Ganjil", matkul: "Algoritma", nilai: "C+", sks: 4 },
+    { nim: "2021006", year: 3, semesterPeriod: "Semester Ganjil", matkul: "Jaringan Komputer", nilai: "B", sks: 3 },
+  ].filter((item) => year === "all" || String(item.year) === year);
 
   return (
     <div className="app-container">
@@ -44,13 +44,13 @@ const DataAkademik = () => {
             <Col lg={4}>
               <ChartCard title="Filter Data">
                 <Form.Group className="mb-3">
-                  <Form.Label>Semester</Form.Label>
-                  <Form.Select value={semester} onChange={(e) => setSemester(e.target.value)}>
-                    <option value="all">Semua Semester</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5">Semester 5</option>
-                    <option value="6">Semester 6</option>
+                  <Form.Label>Tahun</Form.Label>
+                  <Form.Select value={year} onChange={(e) => setYear(e.target.value)}>
+                    <option value="all">Semua Tahun</option>
+                    <option value="1">Tahun 1</option>
+                    <option value="2">Tahun 2</option>
+                    <option value="3">Tahun 3</option>
+                    <option value="4">Tahun 4</option>
                   </Form.Select>
                 </Form.Group>
                 
@@ -82,6 +82,7 @@ const DataAkademik = () => {
                 <thead className="bg-light">
                   <tr>
                     <th>NIM</th>
+                    <th>Tahun</th>
                     <th>Semester</th>
                     <th>Mata Kuliah</th>
                     <th>SKS</th>
@@ -92,7 +93,8 @@ const DataAkademik = () => {
                   {records.map((record, index) => (
                     <tr key={index}>
                       <td>{record.nim}</td>
-                      <td>Semester {record.semester}</td>
+                      <td>{record.year}</td>
+                      <td>{record.semesterPeriod}</td>
                       <td>{record.matkul}</td>
                       <td>{record.sks}</td>
                       <td><strong>{record.nilai}</strong></td>
