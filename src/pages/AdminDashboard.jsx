@@ -30,7 +30,7 @@ useEffect(() => {
     if (!user || user.role !== 'admin') {
       navigate('/');
     }
-}, [user, navigate]);
+}, [user?.id, user?.role, navigate]);
 const avgIPK = (
 students.reduce(
   (sum, s) => sum + (s.curricular1stSemGrade + s.curricular2ndSemGrade) / 2 / 5,
